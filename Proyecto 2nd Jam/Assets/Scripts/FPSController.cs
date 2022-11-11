@@ -1,11 +1,12 @@
 using System.Collections;
 using System.Collections.Generic;
+using TMPro;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class FPSController : MonoBehaviour
 
 {
-    // Start is called before the first frame update
     CharacterController characterController;
 
     public float walkSpeed = 6.0f;
@@ -17,6 +18,7 @@ public class FPSController : MonoBehaviour
     public Animator axe;
     int woodcount;
     private Vector3 move = Vector3.zero;
+    [SerializeField] private TextMeshProUGUI firewoodText;
 
     void Start()
     {
@@ -54,11 +56,15 @@ public class FPSController : MonoBehaviour
         
 
     }
-    void Woodcounter () {
-        if (lifetree.life <=0)
+
+    void Woodcounter()
+    {
+        if (lifetree.life <= 0)
         {
-          woodcount = woodcount + 1;
+            woodcount = woodcount + 1;
+            firewoodText.text = "Firewood pieces: " + woodcount + "/15";
         }
 
     }
+
 }

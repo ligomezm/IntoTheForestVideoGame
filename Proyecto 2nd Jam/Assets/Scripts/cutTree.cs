@@ -11,7 +11,7 @@ public class cutTree : MonoBehaviour
         if (other.gameObject.CompareTag ("Axe"))
         {
             isCut = true;
-        
+      
          }
 
         
@@ -21,13 +21,15 @@ public class cutTree : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if (isCut) {
+        if (isCut) 
+        {
 
         life = life - 5;
-        if (life <= 0){
-           life = 50;
-
-         }
+        if (life <= 0)
+            {
+             Destroy(this.gameObject);
+             life = 50;
+            }
 
          }
        Debug.Log(life);

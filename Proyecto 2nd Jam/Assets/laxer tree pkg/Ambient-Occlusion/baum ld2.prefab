@@ -114,3 +114,4 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   life: 50
   isCut: 0
+  firewoodText: {fileID: 0}
