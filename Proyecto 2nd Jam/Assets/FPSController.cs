@@ -13,6 +13,9 @@ public class FPSController : MonoBehaviour
     public float jumpSpeed = 8.0f;
     public float gravity = 20.0f;
 
+    public cutTree lifetree;
+    public Animator axe;
+    int woodcount;
     private Vector3 move = Vector3.zero;
 
     void Start()
@@ -36,16 +39,26 @@ public class FPSController : MonoBehaviour
             if (Input.GetKey(KeyCode.Space))
                 move.y = jumpSpeed;
                 
-                
-
-
-
-
         }
+
+        if (Input.GetMouseButtonDown(0))
+        {
+         axe.SetBool("cutting", true);
+        }
+        else {
+        axe.SetBool("cutting", false);
+         }
         move.y -= gravity * Time.deltaTime;
 
         characterController.Move(move * Time.deltaTime);
+        
 
+    }
+    void Woodcounter () {
+        if (lifetree.life <=0)
+        {
+          woodcount = woodcount + 1;
+        }
 
     }
 }
