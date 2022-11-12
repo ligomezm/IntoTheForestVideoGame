@@ -43,6 +43,7 @@ public class FPSController : MonoBehaviour
                 
         }
 
+        
         if (Input.GetMouseButtonDown(0))
         {
          axe.SetBool("cutting", true);
@@ -50,11 +51,12 @@ public class FPSController : MonoBehaviour
         else {
         axe.SetBool("cutting", false);
          }
+        
         move.y -= gravity * Time.deltaTime;
 
         characterController.Move(move * Time.deltaTime);
         
-
+        
     }
 
     void Woodcounter()

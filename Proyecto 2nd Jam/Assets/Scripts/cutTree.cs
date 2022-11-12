@@ -5,22 +5,24 @@ using UnityEngine;
 public class cutTree : MonoBehaviour
 {
     public int life;
-    public bool isCut;
+    //public bool isCut;
+    [SerializeField] private float cantidadPuntos;
+    [SerializeField] private Puntaje puntaje;
 
      private void OnCollisionEnter(Collision other) {
         if (other.gameObject.CompareTag ("Axe"))
         {
-            isCut = true;
-      
-         }
+            Destroy(gameObject);
+            cantidadPuntos++;
+            puntaje.SumarPuntos(cantidadPuntos);
+        }
 
-        
-    }
-    
+     }
 
     // Update is called once per frame
-    void Update()
+    /*void Update()
     {
+        
         if (isCut) 
         {
 
@@ -33,5 +35,5 @@ public class cutTree : MonoBehaviour
 
          }
        Debug.Log(life);
-    }
+    }*/
 }
