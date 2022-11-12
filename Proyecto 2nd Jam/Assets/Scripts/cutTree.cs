@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class cutTree : MonoBehaviour
 {
-    public int life;
+    //public int life;
     //public bool isCut;
     [SerializeField] private float cantidadPuntos;
     [SerializeField] private Puntaje puntaje;
@@ -14,7 +14,7 @@ public class cutTree : MonoBehaviour
         {
             Destroy(gameObject);
             cantidadPuntos++;
-            puntaje.SumarPuntos(cantidadPuntos);
+            puntaje.AddPoints(cantidadPuntos);
         }
 
      }

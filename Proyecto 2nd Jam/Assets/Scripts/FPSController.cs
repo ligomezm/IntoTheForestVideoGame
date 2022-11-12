@@ -20,6 +20,10 @@ public class FPSController : MonoBehaviour
     private Vector3 move = Vector3.zero;
     [SerializeField] private TextMeshProUGUI firewoodText;
 
+    public Transform soldier;
+    public Transform[] spawnPoints;
+    public float spawnTime;
+
     void Start()
     {
         characterController = GetComponent<CharacterController>();
@@ -48,25 +52,22 @@ public class FPSController : MonoBehaviour
         {
          axe.SetBool("cutting", true);
         }
-        else {
+        else 
+        {
         axe.SetBool("cutting", false);
-         }
+        }
         
         move.y -= gravity * Time.deltaTime;
 
         characterController.Move(move * Time.deltaTime);
-        
-        
-    }
 
-    void Woodcounter()
-    {
-        if (lifetree.life <= 0)
+        spawnTime -= Time.deltaTime;
+        if (spawnTime <= 0)
         {
-            woodcount = woodcount + 1;
-            firewoodText.text = "Firewood pieces: " + woodcount + "/15";
+            Instantiate(soldier, spawnPoints[Random.Range(0, spawnPoints.Length)].position, spawnPoints[0].rotation);
+            spawnTime = 30f;
         }
-
+        
     }
 
 }

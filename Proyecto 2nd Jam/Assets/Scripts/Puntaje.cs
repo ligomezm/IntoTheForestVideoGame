@@ -5,7 +5,7 @@ using TMPro;
 
 public class Puntaje : MonoBehaviour
 {
-    private float puntos;
+    private float points;
     private TextMeshProUGUI textMesh;
 
     // Start is called before the first frame update
@@ -18,11 +18,11 @@ public class Puntaje : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        textMesh.text = puntos.ToString();        
+        textMesh.text = "Wood pieces: " + points.ToString();        
     }
 
-    public void SumarPuntos(float puntosEntrada)
+    public void AddPoints(float entryPoints)
     {
-        puntos += puntosEntrada;
+        points += entryPoints;
     }
 }
