@@ -10,7 +10,7 @@ public class cutTree : MonoBehaviour
     [SerializeField] private Puntaje puntaje;
 
      private void OnCollisionEnter(Collision other) {
-        if (other.gameObject.CompareTag ("Axe"))
+        if (other.gameObject.CompareTag ("Axe") && Input.GetMouseButtonDown(0))
         {
             Destroy(gameObject);
             cantidadPuntos++;

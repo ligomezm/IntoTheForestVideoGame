@@ -19,7 +19,7 @@ public class PlayerAnimation : MonoBehaviour
         {
             anim.SetBool("cutting", true);
         }
-        else if (Input.GetMouseButtonUp(1))
+        else 
         {
             anim.SetBool("cutting", false);
         }
