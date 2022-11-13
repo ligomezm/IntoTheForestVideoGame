@@ -20,18 +20,22 @@ public class MainPanel : MonoBehaviour
     public GameObject mainPanel;
     public GameObject optionsPanel;
     
- 
     private void Awake()
     {
         volumeFX.onValueChanged.AddListener(ChangeVolumeFX);
         volumeMaster.onValueChanged.AddListener(ChangeVolumeMaster);
     }
 
+    public void StartGame()
+    {
+        SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex + 1);
+    }
 
     public void ExitGame()
     {
         Application.Quit();
     }
+
     public void SetMute()
     {
         if (mute.isOn)
@@ -60,6 +64,7 @@ public class MainPanel : MonoBehaviour
     {
         mixer.SetFloat("VolFX", v);
     }
+
     public void PlaySoundButton()
     {
         fxSource.PlayOneShot(clickSound);
