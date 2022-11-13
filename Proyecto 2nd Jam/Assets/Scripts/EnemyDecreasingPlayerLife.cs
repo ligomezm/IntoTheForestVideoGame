@@ -7,9 +7,7 @@ public class EnemyDecreasingPlayerLife : MonoBehaviour
     private Transform player;
     private float dist;
     public float howClose;
-    //private PlayerHealth playerHealth;
-    
-
+      
     void Start()
     {
         player = GameObject.FindGameObjectWithTag("Player").transform;

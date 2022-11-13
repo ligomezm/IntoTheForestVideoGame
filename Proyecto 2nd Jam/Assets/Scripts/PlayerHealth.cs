@@ -5,7 +5,7 @@ using UnityEngine.UI;
 
 public class PlayerHealth : MonoBehaviour
 {
-    private float health;
+    public float health;
     private float lerpTimer;
     public float maxHealth = 100f;
     public float chipSpeed = 2f;
@@ -22,21 +22,11 @@ public class PlayerHealth : MonoBehaviour
     {
         health = Mathf.Clamp(health, 0, maxHealth);
         UpdateHealthUI();
-
-        //if (Input.GetKeyDown(KeyCode.A))
-        //{
-        //    TakeDamage(Random.Range(5, 10));
-        //}if (Input.GetKeyDown(KeyCode.S))
-        //{
-        //    RestoreHealth(Random.Range(5, 10));
-        //}
         
-
     }
 
     public void UpdateHealthUI()
     {
-        Debug.Log(health);
         float fillFront = frontHealthBar.fillAmount;
         float fillback = backHealthBar.fillAmount;
         float hFraction = health / maxHealth;
