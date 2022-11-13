@@ -6,7 +6,7 @@ public class DestroyEnemy : MonoBehaviour
 {
     private void OnCollisionEnter(Collision collision)
     {
-        if (collision.gameObject.CompareTag("Axe"))
+        if (collision.gameObject.CompareTag("Axe") && Input.GetMouseButtonDown(0))
         {
             Destroy(gameObject);
         }
