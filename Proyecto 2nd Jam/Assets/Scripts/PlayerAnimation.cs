@@ -5,6 +5,7 @@ using UnityEngine;
 public class PlayerAnimation : MonoBehaviour
 {
     Animator anim;
+
     // Start is called before the first frame update
     void Start()
     {
@@ -18,6 +19,7 @@ public class PlayerAnimation : MonoBehaviour
         if (Input.GetMouseButtonDown(0))
         {
             anim.SetBool("cutting", true);
+            
         }
         else 
         {
