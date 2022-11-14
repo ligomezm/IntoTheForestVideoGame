@@ -14,7 +14,7 @@ public class EndGame : MonoBehaviour
 
     private void OnTriggerEnter(Collider other)
     {
-        if (other.gameObject.CompareTag("Player") && puntaje.points == 1)
+        if (other.gameObject.CompareTag("Player") && puntaje.points == 15)
         {
             Invoke("GameCompleted", 2f);
         }

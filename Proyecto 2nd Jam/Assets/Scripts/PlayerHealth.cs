@@ -2,6 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
+using UnityEngine.SceneManagement;
 
 public class PlayerHealth : MonoBehaviour
 {
@@ -11,10 +12,15 @@ public class PlayerHealth : MonoBehaviour
     public float chipSpeed = 2f;
     public Image frontHealthBar;
     public Image backHealthBar;
+    public GameObject soldiersInScene;
+
+    private AudioSource deathSound;
 
     void Start()
     {
         health = maxHealth;
+        deathSound = GetComponent<AudioSource>();
+        soldiersInScene = GameObject.FindGameObjectWithTag("Enemy");
     }
 
     
@@ -56,12 +62,23 @@ public class PlayerHealth : MonoBehaviour
     {
         health -= damage;
         lerpTimer = 0f;
+
+        if (health <= 0)
+        {
+            Invoke("RestartLevel", 1.5f);
+            deathSound.Play();
+        }
     }
 
     public void RestoreHealth(float healAmount)
     {
         health += healAmount;
         lerpTimer = 0f;
+    }
+
+    public void RestartLevel()
+    {
+        SceneManager.LoadScene(SceneManager.GetActiveScene().name);
     }
 
 }
