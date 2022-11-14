@@ -33,7 +33,6 @@ public class FPSController : MonoBehaviour
         //soldierRunPosition = FindObjectOfType<GameObject>().;
     }
 
-    // Update is called once per frame
     void Update()
     {
         if (characterController.isGrounded)
@@ -69,11 +68,6 @@ public class FPSController : MonoBehaviour
         {
            Instantiate(soldier, spawnPoints[Random.Range(0, spawnPoints.Length)].position, spawnPoints[0].rotation);
            spawnTime = 10f;
-        }
-
-        if (soldier == null)
-        {
-            //soldier = GameObject.FindWithTag("Enemy");
         }
         
     }

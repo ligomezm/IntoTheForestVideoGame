@@ -1728,7 +1728,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 1b12d02a4fe886141b2dd384ccbb8a9b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  howClose: 1.5
+  howClose: 2
 --- !u!195 &850745187
 NavMeshAgent:
   m_ObjectHideFlags: 0
