@@ -24,10 +24,13 @@ public class FPSController : MonoBehaviour
     public Transform[] spawnPoints;
     public float spawnTime;
 
+    //GameObject soldierRunPosition;
+    //GameObject soldierRunPosition;
+
     void Start()
     {
         characterController = GetComponent<CharacterController>();
-
+        //soldierRunPosition = FindObjectOfType<GameObject>().;
     }
 
     // Update is called once per frame
@@ -65,7 +68,12 @@ public class FPSController : MonoBehaviour
         if (spawnTime <= 0)
         {
            Instantiate(soldier, spawnPoints[Random.Range(0, spawnPoints.Length)].position, spawnPoints[0].rotation);
-           spawnTime = 30f;
+           spawnTime = 10f;
+        }
+
+        if (soldier == null)
+        {
+            //soldier = GameObject.FindWithTag("Enemy");
         }
         
     }

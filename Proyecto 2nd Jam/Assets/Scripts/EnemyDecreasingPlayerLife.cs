@@ -13,7 +13,6 @@ public class EnemyDecreasingPlayerLife : MonoBehaviour
         player = GameObject.FindGameObjectWithTag("Player").transform;
     }
 
-    // Update is called once per frame
     void Update()
     {
         dist = Vector3.Distance(player.position, transform.position);

@@ -5,7 +5,7 @@ using TMPro;
 
 public class Puntaje : MonoBehaviour
 {
-    private float points;
+    public float points;
     private TextMeshProUGUI textMesh;
 
     // Start is called before the first frame update

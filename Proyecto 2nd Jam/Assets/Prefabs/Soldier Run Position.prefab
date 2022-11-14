@@ -1198,8 +1198,8 @@ SkinnedMeshRenderer:
   m_BlendShapeWeights: []
   m_RootBone: {fileID: 542095906458573607}
   m_AABB:
-    m_Center: {x: 0.016212434, y: 0.05451709, z: 0.19079505}
-    m_Extent: {x: 0.3772618, y: 0.61224484, z: 0.43088353}
+    m_Center: {x: 0.19178426, y: -0.0044777393, z: 0.06651266}
+    m_Extent: {x: 0.20168996, y: 0.7140136, z: 0.2413107}
   m_DirtyAABB: 0
 --- !u!1 &542095905863719900
 GameObject:
@@ -1644,10 +1644,10 @@ CapsuleCollider:
   m_Material: {fileID: 0}
   m_IsTrigger: 0
   m_Enabled: 1
-  m_Radius: 0.85
-  m_Height: 1.6485479
+  m_Radius: 0.35255566
+  m_Height: 1.7
   m_Direction: 1
-  m_Center: {x: 0.041273683, y: 0.8175279, z: 0.12461073}
+  m_Center: {x: 0.041273713, y: 0.8175279, z: 0.17480233}
 --- !u!95 &542095906119461661
 Animator:
   serializedVersion: 4
@@ -1743,7 +1743,7 @@ NavMeshAgent:
   m_Acceleration: 8
   avoidancePriority: 50
   m_AngularSpeed: 120
-  m_StoppingDistance: 2
+  m_StoppingDistance: 2.5
   m_AutoTraverseOffMeshLink: 1
   m_AutoBraking: 1
   m_AutoRepath: 1
