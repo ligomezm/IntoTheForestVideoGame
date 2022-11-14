@@ -6,7 +6,7 @@ public class HouseIncreasingHealth : MonoBehaviour
 {
     private Transform player;
     private float playerHealth;
-    
+
     void Start()
     {
         player = GameObject.FindGameObjectWithTag("Player").transform;
