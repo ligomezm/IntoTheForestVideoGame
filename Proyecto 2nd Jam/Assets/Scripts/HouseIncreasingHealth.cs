@@ -20,5 +20,4 @@ public class HouseIncreasingHealth : MonoBehaviour
             player.GetComponent<PlayerHealth>().RestoreHealth(6f);
         }
     }
-   
 }

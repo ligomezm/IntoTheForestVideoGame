@@ -64,8 +64,8 @@ public class FPSController : MonoBehaviour
         spawnTime -= Time.deltaTime;
         if (spawnTime <= 0)
         {
-            Instantiate(soldier, spawnPoints[Random.Range(0, spawnPoints.Length)].position, spawnPoints[0].rotation);
-            spawnTime = 30f;
+           Instantiate(soldier, spawnPoints[Random.Range(0, spawnPoints.Length)].position, spawnPoints[0].rotation);
+           spawnTime = 30f;
         }
         
     }

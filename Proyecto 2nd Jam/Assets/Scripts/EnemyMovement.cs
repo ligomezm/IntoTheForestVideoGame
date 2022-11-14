@@ -8,7 +8,9 @@ public class EnemyMovement : MonoBehaviour
     //GameObject target;
     //float speed;
     private NavMeshAgent agent = null;
-    [SerializeField] private Transform target;
+    //[SerializeField] private Transform target;
+    GameObject target;
+
 
     // Start is called before the first frame update
     void Start()
@@ -32,17 +34,28 @@ public class EnemyMovement : MonoBehaviour
 
     private void MoveToTarget()
     {
-        agent.SetDestination(target.position);
+        //agent.SetDestination(target.position);
+        agent.SetDestination(target.transform.position);
+
+        //float distanceToTarget = Vector3.Distance(transform.position, target.position);
+        float distanceToTarget = Vector3.Distance(transform.position, target.transform.position);
+
+        if (distanceToTarget <= agent.stoppingDistance)
+        {
+            RotateToTarget();
+        }
     }
 
     private void GetReferences()
     {
         agent = GetComponent<NavMeshAgent>();
+        target = GameObject.Find("Player");
     }
 
     private void RotateToTarget()
     {
-        Vector3 direction = target.position - transform.position;
+        //Vector3 direction = target.position - transform.position;
+        Vector3 direction = target.transform.position - transform.position;
         Quaternion rotation = Quaternion.LookRotation(direction, Vector3.up);
         transform.rotation = rotation;
     }
