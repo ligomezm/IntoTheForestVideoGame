@@ -19,7 +19,7 @@ public class MainPanel : MonoBehaviour
     [Header("Panels")]
     public GameObject mainPanel;
     public GameObject optionsPanel;
-    //public GameObject instructions;
+    public GameObject instructions;
 
     private void Awake()
     {
@@ -31,6 +31,12 @@ public class MainPanel : MonoBehaviour
     {
         SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex + 1);
         
+    }
+
+    public void ShowInstructions()
+    {
+        instructions.SetActive(true);
+
     }
 
     public void ExitGame()

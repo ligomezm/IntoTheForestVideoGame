@@ -19,7 +19,7 @@ public class EnemyDecreasingPlayerLife : MonoBehaviour
 
         if (dist <= howClose)
         {
-           player.GetComponent<PlayerHealth>().TakeDamage(0.06f);
+           player.GetComponent<PlayerHealth>().TakeDamage(0.1f);
         }
 
     }
