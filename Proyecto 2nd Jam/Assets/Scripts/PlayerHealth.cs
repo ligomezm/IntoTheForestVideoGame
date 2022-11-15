@@ -15,12 +15,19 @@ public class PlayerHealth : MonoBehaviour
     public GameObject soldiersInScene;
 
     private AudioSource deathSound;
+    public AudioClip deathSoundClip;
+    public GameObject gameOver;
+    FPSController control;
+    CameraController cameraController;
+
 
     void Start()
     {
         health = maxHealth;
         deathSound = GetComponent<AudioSource>();
         soldiersInScene = GameObject.FindGameObjectWithTag("Enemy");
+        control = GetComponent<FPSController>();
+        cameraController = GetComponent<CameraController>();
     }
 
     
@@ -65,10 +72,15 @@ public class PlayerHealth : MonoBehaviour
 
         if (health <= 0)
         {
-            Invoke("RestartLevel", 1.5f);
-            deathSound.Play();
+            gameOver.SetActive(true);
+            deathSound.PlayOneShot(deathSoundClip);
+            control.enabled = false;
+            cameraController.enabled = false;
+            //Invoke("RestartLevel", 1.5f);
+
         }
     }
+
 
     public void RestoreHealth(float healAmount)
     {
@@ -79,6 +91,8 @@ public class PlayerHealth : MonoBehaviour
     public void RestartLevel()
     {
         SceneManager.LoadScene(SceneManager.GetActiveScene().name);
+        control.enabled = true;
+        cameraController.enabled = true;
     }
 
 }

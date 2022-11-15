@@ -8,28 +8,20 @@ public class HouseIncreasingHealth : MonoBehaviour
     private GameObject player;
     private float playerHealth;
     private GameObject enemy;
+    public bool isSafe;
 
     void Start()
     {
         player = GameObject.FindGameObjectWithTag("Player");
-        //playerHealth = player.GetComponent<PlayerHealth>().health;
         enemy = GameObject.FindGameObjectWithTag("Enemy");
     }
 
-    //private void OnTriggerEnter(Collider other)
-    //{
-    //   if (other.gameObject.CompareTag("Player"))
-    //   {
-    //      player.GetComponent<PlayerHealth>().RestoreHealth(6f);
-    //  }
-    //}
-
-    private void OnTriggerEnter(Collider other)
+    private void OnTriggerStay(Collider other)
     {
         if (other.gameObject.CompareTag("Player"))
         {
             player.GetComponent<PlayerHealth>().RestoreHealth(6f);
-            enemy.GetComponent<NavMeshAgent>().isStopped = true;
+            isSafe = true;
         }
     }
 
@@ -38,6 +30,7 @@ public class HouseIncreasingHealth : MonoBehaviour
         if (other.gameObject.CompareTag("Player"))
         {
             enemy.GetComponent<NavMeshAgent>().isStopped = false;
+            isSafe = false;
         }
 
     }

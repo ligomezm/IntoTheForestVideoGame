@@ -4,13 +4,30 @@ using UnityEngine;
 
 public class DestroyEnemy : MonoBehaviour
 {
-    private void OnCollisionEnter(Collision collision)
+    public FPSController player;
+    public bool isRange;
+
+    private void Start()
+    {
+        player = GameObject.FindGameObjectWithTag("Player").GetComponent<FPSController>();
+
+    }
+
+    private void OnTriggerEnter(Collider other)
     {
         //if (collision.gameObject.CompareTag("Axe") && Input.GetMouseButtonDown(0))
-        if (collision.gameObject.CompareTag("Axe"))
+        if (other.gameObject.CompareTag("Axe"))
         {
-            Debug.Log("Colisionando");
-            Destroy(gameObject);
+            //Debug.Log("Colisionando");
+            isRange = true;
+        }
+    }
+
+    private void Update()
+    {
+        if (isRange && player.isAttacking)
+        {
+            Destroy(this.gameObject);
         }
     }
 }

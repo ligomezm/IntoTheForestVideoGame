@@ -19,7 +19,8 @@ public class MainPanel : MonoBehaviour
     [Header("Panels")]
     public GameObject mainPanel;
     public GameObject optionsPanel;
-    
+    //public GameObject instructions;
+
     private void Awake()
     {
         volumeFX.onValueChanged.AddListener(ChangeVolumeFX);
@@ -29,6 +30,7 @@ public class MainPanel : MonoBehaviour
     public void StartGame()
     {
         SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex + 1);
+        
     }
 
     public void ExitGame()

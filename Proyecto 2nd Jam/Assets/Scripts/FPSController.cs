@@ -24,13 +24,13 @@ public class FPSController : MonoBehaviour
     public Transform[] spawnPoints;
     public float spawnTime;
 
-    //GameObject soldierRunPosition;
-    //GameObject soldierRunPosition;
+    public bool isAttacking;
+    int enemyCount;
+
 
     void Start()
     {
         characterController = GetComponent<CharacterController>();
-        //soldierRunPosition = FindObjectOfType<GameObject>().;
     }
 
     void Update()
@@ -53,10 +53,20 @@ public class FPSController : MonoBehaviour
         if (Input.GetMouseButtonDown(0))
         {
          axe.SetBool("cutting", true);
+            if (Input.GetMouseButton(0))
+            {
+                isAttacking = true;
+            }
+            
+        }
+        else if (Input.GetMouseButtonUp(0))
+        {
+            isAttacking = false;
         }
         else 
         {
         axe.SetBool("cutting", false);
+            
         }
         
         move.y -= gravity * Time.deltaTime;
@@ -64,12 +74,18 @@ public class FPSController : MonoBehaviour
         characterController.Move(move * Time.deltaTime);
 
         spawnTime -= Time.deltaTime;
-        if (spawnTime <= 0)
+        if (spawnTime <= 0 && enemyCount < 6)
         {
-           Instantiate(soldier, spawnPoints[Random.Range(0, spawnPoints.Length)].position, spawnPoints[0].rotation);
-           spawnTime = 10f;
+            Instantiate(soldier, spawnPoints[Random.Range(0, spawnPoints.Length)].position, spawnPoints[0].rotation);
+            spawnTime = 10f;
+            enemyCount = enemyCount + 1;
         }
-        
+        else if (enemyCount >= 6)
+        {
+            spawnTime = 60f;
+            enemyCount = 0;
+        }
+
     }
 
 }
