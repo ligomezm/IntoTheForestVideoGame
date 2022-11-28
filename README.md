@@ -5,8 +5,8 @@ Survival video game developed using Unity and C# for the second game jam hosted 
 himself from the soldier attacks and at the same time he has to collect a specific amount of firewood during the day to make a
 campfire that will keep him warm and alive at night, this is the only way to regain his freedom.
 
-
 Link to play -> https://ligomezm.itch.io/into-the-forest
+(To finish the game collect 15 pieces of firewood and go inside the house.)
 
 Developers:
 
